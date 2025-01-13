@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>TAHOE GUESS WHO</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LANDING PAGE -->
+  <div id="landing-page">
+    <h1>TAHOE GUESS WHO</h1>
+    <button id="startBtn">Start</button>
+  </div>
+
+  <!-- GAME PAGE (hidden until start) -->
+  <div id="game-page">
+    <div class="game-page-container">
+
+      <!-- LEFT HALF: BLUE TEAM -->
+      <div class="left-half">
+        <h2>Blue Team</h2>
+        <div class="board-grid" id="blueBoardGrid">
+          <!-- 25 photos (populated by script.js) -->
+        </div>
+      </div>
+
+      <!-- RIGHT HALF: RED TEAM -->
+      <div class="right-half">
+        <h2>Red Team</h2>
+        <div class="board-grid" id="redBoardGrid">
+          <!-- 25 photos (populated by script.js) -->
+        </div>
+      </div>
+    </div>
+
+    <!-- REGENERATE PHOTOS BUTTON -->
+    <div id="regenerate-container">
+      <button id="regenerateBtn">Regenerate Photos</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

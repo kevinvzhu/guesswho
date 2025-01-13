@@ -1,0 +1,179 @@
+/* GLOBAL RESET */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+  }
+  
+  /* 
+    LANDING PAGE BACKGROUND 
+    (blue-to-red gradient)
+  */
+  body {
+    background: linear-gradient(to right, #2272FF, #FF5151);
+    min-height: 100vh;
+  }
+  
+  /* LANDING PAGE */
+  #landing-page {
+    width: 100%;
+    height: 100vh; /* fill viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  #landing-page h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  #landing-page button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+  }
+  
+  /* 
+    GAME PAGE 
+  */
+  #game-page {
+    display: none; /* hidden until Start is clicked */
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto; /* in case content overflows */
+  }
+  
+  .game-page-container {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 60px); /* room for Regenerate bar at bottom */
+  }
+  
+  /* LEFT (BLUE) HALF */
+  .left-half {
+    flex: 1;
+    background-color: #2272FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 40px;
+  }
+  
+  .left-half h2 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  /* RIGHT (RED) HALF */
+  .right-half {
+    flex: 1;
+    background-color: #FF5151;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 40px;
+  }
+  
+  .right-half h2 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  /* REGENERATE BUTTON CONTAINER */
+  #regenerate-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background: #fff;
+  }
+  
+  #regenerateBtn {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+  }
+  
+  /* 
+    BOARD GRID 
+    - 5 columns x 5 rows = 25
+    - 100×100 images
+    - extra row space for name
+  */
+  .board-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(5, 130px); /* 100px image + ~30px for name/spaces */
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  /* PHOTO CARD */
+  .photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* IMAGE CONTAINER */
+  .image-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* X OVERLAY */
+  .x-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.3);
+    color: #FF3333;
+    font-size: 2em;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .image-container.x-out .x-overlay {
+    opacity: 1;
+  }
+  
+  /* PHOTO NAME */
+  .photo-name {
+    margin-top: 5px;
+    color: #fff;
+    font-size: 0.9em;
+    text-align: center;
+    width: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
